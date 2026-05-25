@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proyecto-redes
+  labels:
+    app: proyecto-redes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proyecto-redes
+  template:
+    metadata:
+      labels:
+        app: proyecto-redes
+    spec:
+      containers:
+      - name: proyecto-redes
+        image: acrproyectoredes2026.azurecr.io/proyecto-redes:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi

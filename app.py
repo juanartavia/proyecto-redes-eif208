@@ -9,7 +9,7 @@ def home():
     return jsonify({
         "mensaje": "Proyecto EIF-208 - Comunicaciones y Redes",
         "servidor": socket.gethostname(),
-        "version": "1.0"
+        "version": "2.0"
     })
 
 @app.route("/health")
